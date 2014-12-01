@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/detail_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="15dip"
+        android:layout_marginTop="10dip"
+        android:paddingBottom="5dip"
+        android:paddingRight="10dip"
+        android:paddingTop="5dip"
+        android:text="@string/back_text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dip"
+        android:text="@string/setting"
+        android:textSize="20dip" />
+
+    <TextView
+        android:id="@+id/top_line"
+        android:layout_width="fill_parent"
+        android:layout_height="2dip"
+        android:layout_below="@+id/detail_back"
+        android:layout_marginTop="10dip"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/special_setting"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top_line"
+        android:layout_marginLeft="30dip"
+        android:paddingBottom="15dip"
+        android:paddingRight="50dip"
+        android:paddingTop="15dip"
+        android:text="软件过滤设置" />
+
+    <TextView
+        android:id="@+id/special_setting_line"
+        android:layout_width="fill_parent"
+        android:layout_height="0.6dip"
+        android:layout_alignLeft="@+id/special_setting"
+        android:layout_below="@+id/special_setting"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/news_is_open"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/special_setting_line"
+        android:layout_marginLeft="30dip"
+        android:paddingBottom="15dip"
+        android:paddingRight="10dip"
+        android:paddingTop="15dip"
+        android:text="是否消息提醒" />
+
+    <Switch
+        android:id="@+id/is_open_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/news_is_open"
+        android:layout_alignParentRight="true"
+        android:paddingRight="30dip" />
+
+    <TextView
+        android:id="@+id/news_is_open_line"
+        android:layout_width="fill_parent"
+        android:layout_height="0.6dip"
+        android:layout_alignLeft="@+id/news_is_open"
+        android:layout_below="@+id/news_is_open"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/out_flow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/news_is_open_line"
+        android:layout_marginLeft="30dip"
+        android:paddingBottom="15dip"
+        android:paddingRight="10dip"
+        android:paddingTop="15dip"
+        android:text="流量使用多少后提醒" />
+
+    <Spinner
+        android:id="@+id/out_of_flow_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/out_flow"
+        android:layout_alignParentRight="true"
+        android:entries="@array/remind_flow"
+        android:paddingBottom="10dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="30dip"
+        android:paddingTop="10dip" />
+
+    <TextView
+        android:id="@+id/out_flow_line"
+        android:layout_width="fill_parent"
+        android:layout_height="0.6dip"
+        android:layout_alignLeft="@+id/out_flow"
+        android:layout_below="@+id/out_flow"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/every_minute_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/out_flow_line"
+        android:layout_marginLeft="30dip"
+        android:paddingBottom="15dip"
+        android:paddingRight="10dip"
+        android:paddingTop="15dip"
+        android:text="隔几分钟检测" />
+
+    <Spinner
+        android:id="@+id/check_flow_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/every_minute_check"
+        android:layout_alignParentRight="true"
+        android:entries="@array/every_minute_check_flow"
+        android:paddingBottom="10dip"
+        android:paddingLeft="15dip"
+        android:paddingRight="30dip"
+        android:paddingTop="15dip" />
+
+    <TextView
+        android:id="@+id/every_minute_check_line"
+        android:layout_width="fill_parent"
+        android:layout_height="0.6dip"
+        android:layout_alignLeft="@+id/every_minute_check"
+        android:layout_below="@+id/every_minute_check"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/help_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/every_minute_check_line"
+        android:layout_marginLeft="30dip"
+        android:paddingBottom="15dip"
+        android:paddingRight="10dip"
+        android:paddingTop="15dip"
+        android:text="帮助说明" />
+
+    <TextView
+        android:id="@+id/help_text_line"
+        android:layout_width="fill_parent"
+        android:layout_height="0.6dip"
+        android:layout_alignLeft="@+id/help_text"
+        android:layout_below="@+id/help_text"
+        android:background="@android:color/darker_gray" />
+ 
+
+
+</RelativeLayout>

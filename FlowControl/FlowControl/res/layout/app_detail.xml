@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/detail_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:paddingTop="5dip"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="15dip"
+        android:layout_marginTop="10dip"
+        android:text="@string/back_text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dip"
+        android:textSize="20dip"
+        android:text="@string/details" />
+    
+    <TextView
+        android:id="@+id/detail_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dip"
+        android:layout_marginTop="15dip" 
+        android:textSize="15dip"
+        android:text="@string/refresh" />
+    
+
+    <TextView
+        android:id="@+id/top_line"
+        android:layout_width="fill_parent"
+        android:layout_height="2dip"
+        android:layout_below="@+id/detail_back"
+        android:layout_marginTop="10dip"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/name_front"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top_line"
+        android:layout_marginLeft="30dip"
+        android:layout_marginTop="15dip"
+        android:text="@string/name" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/top_line"
+        android:layout_marginRight="30dip"
+        android:layout_marginTop="15dip"
+        android:text="@string/name" />
+
+    <TextView
+        android:id="@+id/name_line"
+        android:layout_width="fill_parent"
+        android:layout_height="0.8dip"
+        android:layout_alignLeft="@+id/name_front"
+        android:layout_below="@+id/name_front"
+        android:layout_marginTop="15dip"
+        android:background="@android:color/darker_gray" />
+
+     
+
+    <TextView
+        android:id="@+id/user_flow_front"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name_line"
+        android:layout_marginLeft="30dip"
+        android:layout_marginTop="15dip"
+        android:text="@string/use_flow" />
+
+    <TextView
+        android:id="@+id/user_flow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/name_line"
+        android:layout_marginRight="30dip"
+        android:layout_marginTop="15dip"
+        android:text="@string/name" />
+
+    <TextView
+        android:id="@+id/user_flow_line"
+        android:layout_width="fill_parent"
+        android:layout_height="0.8dip"
+        android:layout_alignLeft="@+id/user_flow_front"
+        android:layout_below="@+id/user_flow_front"
+        android:layout_marginTop="15dip"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/limit_flow_front"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_flow_line"
+        android:layout_marginLeft="30dip"
+        android:layout_marginTop="15dip"
+        android:text="@string/limit_flow" />
+
+    <Spinner
+        android:id="@+id/limit_flow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/limit_flow_front"
+        android:entries="@array/limit_flow_number"
+        android:layout_marginBottom="10dip"
+        android:layout_marginRight="30dip" />
+
+    <TextView
+        android:id="@+id/limit_flow_line"
+        android:layout_width="fill_parent"
+        android:layout_height="0.8dip"
+        android:layout_alignLeft="@+id/limit_flow_front"
+        android:layout_below="@+id/limit_flow_front"
+        android:layout_marginTop="15dip"
+        android:background="@android:color/darker_gray" />
+
+</RelativeLayout>

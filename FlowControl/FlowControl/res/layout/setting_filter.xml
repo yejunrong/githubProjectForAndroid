@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/filter_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dip"
+        android:layout_marginTop="10dip"
+        android:paddingBottom="10dip"
+        android:paddingLeft="5dip"
+        android:paddingRight="10dip"
+        android:paddingTop="10dip"
+        android:text="@string/back_text" />
+
+    <TextView
+        android:id="@+id/filter_back_line"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_below="@+id/filter_back"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/filter_details"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:paddingBottom="15dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="15dip"
+        android:textColor="@android:color/holo_red_dark"
+        android:text="@string/filter_detail" />
+
+    <ListView
+        android:id="@+id/filter_listview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/filter_details"
+        android:layout_below="@+id/filter_back_line" >
+    </ListView>
+
+</RelativeLayout>

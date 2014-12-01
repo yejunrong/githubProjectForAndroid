@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="limit_flow_number">
+        <item >不限制</item>
+        <item >1M</item>
+        <item >2M</item>
+        <item >3M</item>
+        <item >4M</item>
+        <item >5M</item>
+        <item >6M</item>
+        <item >7M</item>
+        <item >9M</item>
+        <item >10M</item>
+        <item >12M</item>
+        <item >15M</item>
+        <item >18M</item>
+        <item >20M</item>
+        <item >25M</item>
+        <item >30M</item>
+        <item >40M</item>
+        <item >50M</item>
+    </string-array>
+
+    
+    <string-array name="remind_flow">
+        <item >95%</item>
+        <item >90%</item>
+        <item >80%</item>
+        <item >70%</item>
+        <item >60%</item>
+        <item >50%</item>
+    </string-array>
+    
+    <string-array name="every_minute_check_flow">
+        <item >5分钟</item>
+        <item >2分钟</item>
+        <item >1分钟</item>
+        <item >8分钟</item> 
+    </string-array>
+    
+</resources>

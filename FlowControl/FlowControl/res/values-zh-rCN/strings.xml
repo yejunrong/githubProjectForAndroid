@@ -1,0 +1,23 @@
+<resources>
+
+    <string name="app_name">FlowControl</string>
+    <string name="main_view_top_prompt">以下是手机正在运行的软件</string>
+    <string name="setting">设置</string>
+    <string name="test">test</string>
+    <string name="details">详情</string>
+	<string name="clean_">一键清除</string>
+	<string name="back_text">返回</string>
+	<string name="name">名称:</string>
+	<string name="start_limit_flow">开始限制日期:</string>
+	
+	<string name="use_flow">已使用流量:</string>
+	<string name="limit_flow">限制使用流量:</string>
+	<string name="is_limit_flow">是否限制:</string>
+	<string name="refresh">刷新</string>
+	<string name="no_limit">不限制</string>
+	
+	<string name="filter_detail">选中后，该软件将无限制使用流量，并且不能停止运行该软件</string>
+	<string name="mogo_app_id">43b8100ff6ac42b6980fd0bb39cfe512</string>
+	<string name="loading">加载中。。。</string>
+	    
+</resources>

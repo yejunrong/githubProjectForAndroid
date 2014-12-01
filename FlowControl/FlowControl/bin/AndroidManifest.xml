@@ -1,0 +1,528 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.flowcontrol"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- 百灵欧拓 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 百灵欧拓 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- 触控科技 、安盟 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- wooboo -->
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- 聚点 -->
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <!-- 安盟 -->
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <!-- 百灵欧拓 -->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <!-- 宾谷 ,有米,百灵欧拓 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- 宾谷 -->
+    <uses-permission android:name="android.permission.READ_LOGS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" >
+    </uses-permission>
+    <!-- adchina -->
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" >
+    </uses-permission>
+    <!-- 艾德尔 可选权限 -->
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" /> <!-- 写入日程，但不可读取 -->
+    <uses-permission android:name="android.permission.READ_CALENDAR" /> <!-- 允许程序读取用户的日程信息 -->
+    <!-- aduu -->
+
+　　
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <!-- MIX -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <application
+        android:name="FCAppController"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.flowcontrol.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.flowcontrol.plugins.message.FCServiceState_Message" />
+        <service android:name="com.flowcontrol.plugins.message.FCServiceState_CheckFlow" />
+
+        <receiver android:name="com.flowcontrol.plugins.message.FCBootCompletedReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 声明Mogo的Activity -->
+        <activity
+            android:name="com.adsmogo.adview.AdsMogoWebView"
+            android:configChanges="orientation|keyboardHidden|screenSize|keyboard|keyboardHidden"
+            android:label="@string/app_name" >
+        </activity>
+        <!-- 注册Service，应用下载所需 -->
+        <service
+            android:name="com.adsmogo.controller.service.UpdateService"
+            android:exported="true"
+            android:process=":remote" />
+        <!-- 注册Service，应用被安装所用 -->
+        <service
+            android:name="com.adsmogo.controller.service.CountService"
+            android:exported="true"
+            android:process=":remote" />
+
+        <!-- 声明Vungle的Activity -->
+        <activity
+            android:name="com.vungle.sdk.VungleAdvert"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <!-- 声明艾德思奇的Activity和Service -->
+        <!-- 注册com.mobisage.android.MobiSageActivity -->
+        <activity
+            android:name="com.mobisage.android.MobiSageActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name" >
+        </activity>
+        <!-- 艾德尔 service -->
+        <service
+            android:name="com.rrgame.sdk.download.RRGDownloadService"
+            android:exported="false" >
+        </service>
+        <!-- 声明 行云 activity -->
+        <activity
+            android:name="com.adwalker.wall.platform.layout.AdDetailActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.adwalker.wall.platform.layout.AdShowWebActivity"
+            android:configChanges="keyboardHidden|orientation" />
+
+        <!-- otomod 百灵欧拓 -->
+        <activity android:name="com.otomod.ad.AdActivity" >
+            <intent-filter>
+                <action android:name="com.otomod.ad.shortcut" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!--
+        图片在页面展示 authorities为你的包名(V2.0.0以上才使用) 
+        <provider
+            android:name="com.otomod.ad.provider.ImageProvider"
+            android:authorities="com.adsmogo" />
+        -->
+
+
+        <!--
+        下载广播接收器 
+        <receiver android:name="com.otomod.ad.DownloadCompleteReceiver">
+             <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+            </intent-filter>
+        </receiver>
+        -->
+
+
+        <!-- openudid -->
+        <service android:name="org.OpenUDID.OpenUDID_service" >
+            <intent-filter>
+                <action android:name="org.openudid.GETUDID" />
+            </intent-filter>
+        </service>
+        <!-- 有米传媒 Android SDK 配置(可直接复制节点) -->
+        <!-- SDK 必须配置 -->
+        <activity
+            android:name="net.youmi.android.AdBrowser"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+
+        <service
+            android:name="net.youmi.android.AdService"
+            android:exported="false" >
+        </service>
+        <!--
+        <receiver
+            android:name="net.youmi.android.AdReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        -->
+        <!-- /SDK 必须配置 -->
+        <!-- 声明多盟的Activity -->
+        <activity
+            android:name="cn.domob.android.ads.DomobActivity"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <!-- 声明Vpon的Activity -->
+
+        <activity
+            android:name="com.vpadn.widget.VpadnActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|keyboard|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:hardwareAccelerated="true"
+            android:theme="@android:style/Theme.Translucent" >
+        </activity>
+        <!-- 宾谷 -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+
+            <!--
+             <intent-filter>
+				<action android:name="com.baidu.location.service_v2.9"></action>
+			</intent-filter>
+            -->
+        </service>
+
+        <activity
+            android:name="cn.com.pingcoo.api.PingCooLBSActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask" >
+        </activity>
+
+        <!-- 声明HaoBai的Activity -->
+        <activity
+            android:name="com.dxad.OffersWebView"
+            android:configChanges="keyboardHidden|orientation" />
+
+        <service android:name="com.dxad.LpService" />
+        <!-- 声明AdChina的Activity -->
+        <activity
+            android:name="com.adchina.android.ads.views.AdBrowserView"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent" >
+        </activity>
+        <!-- 声明AppMedia的Activity -->
+        <activity android:name="cn.appmedia.ad.AdActivity" >
+        </activity>
+
+        <!--
+        声明微云
+        <receiver android:name="com.wiyun.common.WiLauncher" >
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        -->
+
+        <activity
+            android:name="com.wiyun.common.SimpleBrowserActivity"
+            android:launchMode="singleTask" >
+        </activity>
+
+        <!-- 声明Greystripe的Activity -->
+
+        <activity
+            android:name="com.greystripe.sdk.GSFullscreenActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation" />
+
+        <!-- 声明MdotM的Activity -->
+        <activity
+            android:name="com.mdotm.android.ads.MdotmLandingPage"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <!-- 声明Millennial的Activity -->
+
+        <activity
+            android:name="com.millennialmedia.android.MMActivity"
+            android:configChanges="keyboardHidden|orientation|keyboard"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.millennialmedia.android.VideoPlayer"
+            android:configChanges="keyboardHidden|orientation|keyboard" >
+        </activity>
+
+        <!-- 声明AirAD的Activity -->
+        <activity
+            android:name="com.mt.airad.MultiAD"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- 声明LSense的Activity -->
+        <activity
+            android:name="com.l.adlib_android.AdBrowseActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!-- LSense 全屏广告默认配置 -->
+        <meta-data
+            android:name="appkey"
+            android:value="12501045" /> <!-- 配置你的媒体ID -->
+
+
+        <!-- 声明哇棒的Activity -->
+
+        <activity
+            android:name="com.wooboo.adlib_android.AdActivity"
+            android:configChanges="orientation|keyboardHidden" />
+
+        <service android:name="com.wooboo.download.WoobooService" >
+            <intent-filter>
+                <action android:name="com.wooboo.WoobooDownloadService" >
+                </action>
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="com.wooboo.adlib_android.FullActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="singleTask" />
+
+        <meta-data
+            android:name="Market_ID"
+            android:value="1" />
+
+        <!-- 互动通 -->
+        <activity
+            android:name="com.hdtmobile.imocha.IMochaBrowserActivity"
+            android:configChanges="orientation|navigation|keyboardHidden" />
+        <activity
+            android:name="com.hdtmobile.imocha.IMochaPhotoActivity"
+            android:configChanges="orientation|navigation|keyboardHidden" />
+        <!-- 聚赢 -->
+        <activity android:name="com.tencent.exmobwin.banner.MobWINBrowserActivity" >
+        </activity>
+        <activity
+            android:name="com.tencent.exmobwin.banner.DialogActivity"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+
+        <!-- 添加百度应用详情Activity -->
+        <!-- 注册AppActivity -->
+        <activity
+            android:name="com.baidu.mobads.AppActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation" />
+
+        <!-- 添加友盟的Activity -->
+
+        <activity
+            android:name="com.umengAd.android.UmengAdDetailActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <!-- 友盟应用联盟 -->
+        <service
+            android:name="com.umeng.common.net.DownloadingService"
+            android:exported="true"
+            android:process=":DownloadingService" >
+        </service>
+
+        <!-- 飞云sdk需要配置 -->
+        <service android:name="com.fractalist.sdk.base.sys.FtService" />
+
+        <activity
+            android:name="com.fractalist.sdk.base.sys.FtActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true"
+            android:label="@string/app_name" />
+        <!-- 显示应用列表和详细信息(必须) -->
+        <activity
+            android:name="net.miidi.ad.banner.AdBannerActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <!-- 声明聚点打开广告需要的activity -->
+        <activity
+            android:name="com.huawei.juad.android.BrowserActivity"
+            android:configChanges="orientation|keyboardHidden" >
+        </activity>
+        <!-- momark -->
+        <activity
+            android:name="com.donson.momark.activity.AdActivity"
+            android:launchMode="singleTop" >
+        </activity>
+        <!-- 指点 -->
+        <activity
+            android:name="com.adzhidian.view.WebViewActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <!-- inmobi -->
+        <!-- Mandatory activity declaration to show the Ad in the embedded browser -->
+        <activity
+            android:name="com.inmobi.androidsdk.IMBrowserActivity"
+            android:configChanges="keyboardHidden|orientation|keyboard|smallestScreenSize|screenSize" />
+
+        <!-- 声明惟千的activity -->
+        <activity
+            android:name="com.wqmobile.sdk.WQActionHandler"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name="com.wqmobile.sdk.WQBrowser"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 声明Aduu的activity -->
+        <activity
+            android:name="cn.aduu.android.AdActivity"
+            android:theme="@android:style/Theme.Translucent" >
+        </activity>
+
+        <meta-data
+            android:name="appid"
+            android:value="appid:001333392243167634" />
+        <!-- 声明易积分的activity 3.1.6更新了配置 -->
+        <!-- 注册详情 Activity ( ( ( ( 必填 ) ) ) ) -->
+        <activity
+            android:name="com.qiang.escore.sdk.view.DetailActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <!-- 注册网页 Activity ( ( ( ( 必填 ) ) ) ) -->
+        <activity
+            android:name="com.qiang.escore.sdk.view.WebActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <!-- 触控科技 -->
+        <service
+            android:name="com.punchbox.engine.PunchBoxService"
+            android:exported="true"
+            android:process="com.punchbox.punchboxservice" >
+            <intent-filter>
+                <action android:name="com.punchbox.service" />
+            </intent-filter>
+        </service>
+        <!-- charboosr -->
+        <!-- Add this if you implement cb.setImpressionsUseActivities(true) -->
+        <activity
+            android:name="com.chartboost.sdk.CBImpressionActivity"
+            android:excludeFromRecents="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- MIX -->
+        <activity
+            android:name="com.guohead.mix.MIXViewActivity"
+            android:hardwareAccelerated="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+
+        <!-- MobFox -->
+        <activity
+            android:name="com.adsdk.sdk.banner.InAppWebView"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+        <activity
+            android:name="com.adsdk.sdk.video.RichMediaActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:hardwareAccelerated="false" />
+        <activity
+            android:name="com.adsdk.sdk.mraid.MraidActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+        <!-- 声明果盟的Activity -->
+        <activity
+            android:name="cn.guomob.android.GuomobAdActivity"
+            android:theme="@android:style/Theme.Translucent" />
+        <!-- 众感传媒 -->
+        <activity
+            android:name="com.iisensemob.adsdk.banner.InAppWebView"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+        <!-- 广点通 -->
+        <service
+            android:name="com.qq.e.comm.DownloadService"
+            android:exported="false" >
+        </service>
+
+        <activity android:name="com.qq.e.ads.AdActivity" >
+        </activity>
+        <activity android:name="com.qq.e.ads.GdtBrowserActivity" >
+        </activity>
+        <activity
+            android:name="com.qq.e.ads.InterstitialAdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <!-- Tanx -->
+        <service
+            android:name="com.umeng.common.ufp.net.DownloadingService"
+            android:exported="true"
+            android:process=":DownloadingService" >
+        </service>
+        <!-- 应用详情 -->
+        <activity
+            android:name="com.umeng.newxp.view.UMDetail"
+            android:configChanges="keyboard|orientation"
+            android:launchMode="standard" />
+
+        <!-- 传漾 -->
+        <activity android:name="com.adsame.main.AdsameBrowser" />
+        <!-- 智讯 -->
+        <activity android:name="com.adarrive.android.sdk.applistActivity" >
+        </activity>
+        <!--
+        <receiver android:name="com.adarrive.android.sdk.SoftBroadcast" android:enabled="true" >
+         <intent-filter>
+             <action android:name="android.intent.action.PACKAGE_ADDED"></action> 
+             <action android:name="android.intent.action.PACKAGE_INSTALL"></action>
+               <data android:scheme="package"></data> 
+              </intent-filter> 
+		</receiver>
+        -->
+        <!-- 点媒 -->
+        <activity
+            android:name="cn.lomark.ns.android.view.CustomWebView"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- GoogleServiceAdMob -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="5077000" /> <!-- 注意 5077000 为Googleservice的版本号，需要和Googleservice的版本对应使用 -->
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+
+        <!-- 4399广告SDK配置开始 -->
+
+
+        <!-- 添加下载服务 -->
+        <service
+            android:name="com.unionsy.sdk.SsjjAdService"
+            android:exported="false" />
+
+        <!-- 至美 -->
+        <service android:name="com.zmedia.cn.service.AdService" />
+
+        <!-- Tanx平台 -->
+        <service
+            android:name="com.taobao.munion.base.download.DownloadingService"
+            android:exported="true"
+            android:process=":DownloadingService" >
+        </service>
+    </application>
+
+</manifest>
