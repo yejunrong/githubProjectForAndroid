@@ -5,14 +5,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-public class FFDBHelper extends SQLiteOpenHelper {
+public class DBHelper extends SQLiteOpenHelper {
 
-	private FFDB_Friend table_friend_;
+	private DB_Friend table_friend_;
 
-	public FFDBHelper(Context context) {
+	public DBHelper(Context context) {
 		super(context, "demo.db", null, 1);
 
-		table_friend_ = new FFDB_Friend("friend", this);
+		table_friend_ = new DB_Friend("friend", this);
 
 		getWritableDatabase();
 	}
@@ -29,7 +29,7 @@ public class FFDBHelper extends SQLiteOpenHelper {
 		// TODO 数据库升级更新
 	}
 
-	public FFDB_Friend getFriendTable() {
+	public DB_Friend getFriendTable() {
 		return table_friend_;
 	}
 

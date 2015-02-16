@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 import android.database.sqlite.SQLiteDatabase;
 
-public abstract class FFDBBase {
+public abstract class DBBase {
 
 	protected String tableName_;
-	protected FFDBHelper helper_;
+	protected DBHelper helper_;
 
 	protected ArrayList<String> fields_ = new ArrayList<String>();
 
-	public FFDBBase(String tableName, FFDBHelper helper) {
+	public DBBase(String tableName, DBHelper helper) {
 
 		tableName_ = tableName;
 		helper_ = helper;

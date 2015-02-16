@@ -9,7 +9,7 @@ import android.util.Log;
 
 import com.yjr.databasedemo.entity.FriendContactEntity;
 
-public class FFDB_Friend extends FFDBBase {
+public class DB_Friend extends DBBase {
 
 	// column name
 	public final static String COLUMN_FriendId = "uuid"; // 好友id
@@ -24,7 +24,7 @@ public class FFDB_Friend extends FFDBBase {
 	public final static String COLUMN_first_meet_latitude = "first_meet_latitude";
 	public final static String COLUMN_first_meet_longitude = "first_meet_longitude";
 
-	protected FFDB_Friend(String tableName, FFDBHelper helper) {
+	protected DB_Friend(String tableName, DBHelper helper) {
 		super(tableName, helper);
 
 		fields_.add(COLUMN_FriendId + ":TEXT");
